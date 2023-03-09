@@ -1,5 +1,6 @@
-import 'package:myproject_app/shared/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:myproject_app/shared/drawer.dart';
+import 'package:myproject_app/shared/drawer_builder.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -9,8 +10,9 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Home"),
+        leading: const DrawerBuilder(),
       ),
-      bottomNavigationBar: const BottomNavBar(),
+      drawer: const AppDrawer(),
     );
   }
 }
