@@ -6,8 +6,8 @@ import 'package:myproject_app/profile/profile.dart';
 import 'package:myproject_app/search/search.dart';
 
 var appRoutes = {
-  '/': (context) => const Home(),
-  '/login': (context) => const Login(),
+  '/': (context) => const Login(),
+  '/home': (context) => const Home(),
   '/register': (context) => const Register(),
   '/contact': (context) => const Contact(),
   '/profile': (context) => const Profile(),
