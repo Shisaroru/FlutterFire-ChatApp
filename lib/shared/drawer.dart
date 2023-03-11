@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myproject_app/services/auth.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
@@ -31,7 +32,9 @@ class AppDrawer extends StatelessWidget {
           ),
           ListTile(
             title: const Text('Log out'),
-            onTap: () {},
+            onTap: () {
+              Auth().signOut();
+            },
           )
         ],
       ),
