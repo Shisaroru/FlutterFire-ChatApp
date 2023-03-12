@@ -4,6 +4,7 @@ class Input extends StatelessWidget {
   final String label;
   final Icon icon;
   final bool showInput;
+  final TextEditingController controller;
   final String validator;
 
   const Input({
@@ -12,6 +13,7 @@ class Input extends StatelessWidget {
     required this.icon,
     required this.showInput,
     required this.validator,
+    required this.controller,
   });
 
   @override
@@ -31,6 +33,7 @@ class Input extends StatelessWidget {
         }
         return null;
       },
+      controller: controller,
       obscureText: !showInput,
       decoration: InputDecoration(
         labelText: label,
