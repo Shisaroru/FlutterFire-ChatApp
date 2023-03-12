@@ -115,7 +115,15 @@ class _LoginState extends State<Login> {
                         AuthButton(
                           color: Colors.white,
                           text: "Log in with Google",
-                          method: Auth().googleSignIn,
+                          method: () async {
+                            setState(() {
+                              _isLoading = true;
+                            });
+                            await Auth().googleSignIn();
+                            setState(() {
+                              _isLoading = false;
+                            });
+                          },
                         ),
                         const SizedBox(
                           height: 15,
