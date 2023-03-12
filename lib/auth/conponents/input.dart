@@ -26,6 +26,8 @@ class Input extends StatelessWidget {
               : "Please enter a valid email address";
         } else if (validator == "password" && value!.length < 6) {
           return "Password must be at least 6 characters";
+        } else if (value!.isEmpty) {
+          return "This field is required";
         }
         return null;
       },
