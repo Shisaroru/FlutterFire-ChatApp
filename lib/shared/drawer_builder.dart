@@ -7,7 +7,8 @@ class DrawerBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return Builder(builder: (context) {
       return IconButton(
-          icon: const Icon(Icons.accessible),
+          icon: const Icon(Icons.account_circle),
+          iconSize: 40,
           onPressed: () {
             Scaffold.of(context).openDrawer();
           });

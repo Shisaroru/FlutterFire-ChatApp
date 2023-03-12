@@ -1,12 +1,19 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:myproject_app/services/auth.dart';
+import 'package:myproject_app/services/database.dart';
 
 class AppState extends ChangeNotifier {
-  int _route = 0;
+  String _name = "";
 
-  int get route => _route;
+  String get name => _name;
 
-  void changeRoute(int route) {
-    _route = route;
+  void getName() async {
+    var email = Auth().firebaseAuth.currentUser?.email;
+    QuerySnapshot snapshot =
+        await DatabaseService(uid: Auth().firebaseAuth.currentUser?.uid)
+            .getUser(email!);
+    _name = snapshot.docs[0]["fullName"];
     notifyListeners();
   }
 }

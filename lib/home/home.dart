@@ -9,7 +9,25 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Home"),
+        centerTitle: true,
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.pushNamed(context, "/search");
+            },
+            icon: const Icon(
+              Icons.search,
+              size: 32,
+            ),
+          )
+        ],
+        title: const Text(
+          "Chat",
+          style: TextStyle(
+            fontSize: 27,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         leading: const DrawerBuilder(),
       ),
       drawer: const AppDrawer(),

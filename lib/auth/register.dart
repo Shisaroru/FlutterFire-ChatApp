@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myproject_app/auth/conponents/auth_button.dart';
 import 'package:myproject_app/auth/conponents/input.dart';
-import 'package:myproject_app/services/share_preference.dart';
 import 'package:myproject_app/shared/show_snack_bar.dart';
 
 import '../services/auth.dart';
@@ -111,6 +110,7 @@ class _RegisterState extends State<Register> {
 
   register() async {
     if (formKey.currentState!.validate()) {
+      FocusManager.instance.primaryFocus?.unfocus();
       setState(() {
         _isLoading = true;
       });
@@ -138,8 +138,7 @@ class _RegisterState extends State<Register> {
       });
 
       if (success != "" && mounted) {
-        showSnackBar(
-            context, "Error cannot register, please try again", "error");
+        showSnackBar(context, success, "error");
       }
     }
   }
