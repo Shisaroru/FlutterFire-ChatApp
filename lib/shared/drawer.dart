@@ -4,19 +4,8 @@ import 'package:provider/provider.dart';
 
 import '../app_state.dart';
 
-class AppDrawer extends StatefulWidget {
+class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
-
-  @override
-  State<AppDrawer> createState() => _AppDrawerState();
-}
-
-class _AppDrawerState extends State<AppDrawer> {
-  @override
-  void initState() {
-    super.initState();
-    context.read<AppState>().getName();
-  }
 
   @override
   Widget build(BuildContext context) {
