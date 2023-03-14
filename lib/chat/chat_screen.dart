@@ -24,7 +24,7 @@ class _ChatState extends State<Chat> {
 
   getData() async {
     chats = DatabaseService().getChats(widget.args.groupId);
-    members = await DatabaseService().getGroupAdmin(widget.args.groupId);
+    members = await DatabaseService().getGroupMembers(widget.args.groupId);
     setState(() {});
   }
 

@@ -11,7 +11,12 @@ class GroupInfo extends StatelessWidget {
         title: const Text("Group Information"),
         centerTitle: true,
       ),
-      body: ListView.builder(
+      body: ListView.separated(
+        separatorBuilder: (context, index) {
+          return const SizedBox(
+            height: 15,
+          );
+        },
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
         itemCount: members.length - 1,
         itemBuilder: (context, index) {
