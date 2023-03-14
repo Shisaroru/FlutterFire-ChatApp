@@ -102,7 +102,7 @@ class _HomeState extends State<Home> {
             if (snapshot.data["groups"].length == 0) {
               return const Center(
                 child: Text(
-                  "NO BITCHES?",
+                  "No group",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 24,

@@ -48,4 +48,29 @@ class DatabaseService {
       "groups": FieldValue.arrayUnion(["${documentReferences.id}_$groupName"]),
     });
   }
+
+  Stream<QuerySnapshot> getChats(String groupId) {
+    return groupCollection
+        .doc(groupId)
+        .collection("messages")
+        .orderBy("time")
+        .snapshots();
+  }
+
+  Future getGroupAdmin(String groupId) async {
+    DocumentReference doc = groupCollection.doc(groupId);
+    DocumentSnapshot snapshot = await doc.get();
+    List members = await snapshot.get("members");
+    List membersList = [];
+    String admin = await snapshot.get("admin");
+    for (var i = 0; i < members.length; i++) {
+      DocumentReference userDoc = userCollection.doc(members[i]);
+      DocumentSnapshot userSnapshot = await userDoc.get();
+      if (members[i] == admin) {
+        admin = userSnapshot.get("fullName");
+      }
+      membersList.add(userSnapshot.get("fullName"));
+    }
+    return [...membersList, admin];
+  }
 }

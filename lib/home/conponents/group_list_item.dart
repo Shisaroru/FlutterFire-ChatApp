@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myproject_app/chat/chat_argument.dart';
 
 class GroupItem extends StatelessWidget {
   final String groupName;
@@ -10,7 +11,8 @@ class GroupItem extends StatelessWidget {
     return InkWell(
       borderRadius: BorderRadius.circular(20),
       onTap: () {
-        Navigator.pushNamed(context, '/chat');
+        Navigator.pushNamed(context, '/chat',
+            arguments: ChatArguments(groupName, groupId));
       },
       child: ListTile(
         shape: RoundedRectangleBorder(
