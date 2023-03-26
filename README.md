@@ -1,16 +1,7 @@
-# Project học phần PTUD Di động (CT484)
+#Overview
+A realtime chat app build with flutter as the front-end and Firebase as the back-end
 
-Học kỳ 2, Năm học 2022-2023
-
-**MSSV 1** : 
-
-**Họ tên SV 1**:
-
-**MSSV 2**:
-
-**Họ tên SV 2**:
-
-**Lớp học phần**:
-
-**Tên dự án**:
-
+##Features
+- Users authentication with email/password and google login
+- Create and join/leave chat group
+- Search for a group to join and send messages to all people in the group
