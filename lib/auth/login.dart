@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:myproject_app/app_state.dart';
 import 'package:myproject_app/auth/conponents/input.dart';
 import 'package:myproject_app/auth/conponents/auth_button.dart';
 import 'package:myproject_app/home/home.dart';
 import 'package:myproject_app/services/auth.dart';
 import 'package:myproject_app/shared/show_snack_bar.dart';
+import 'package:provider/provider.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -51,6 +53,8 @@ class _LoginState extends State<Login> {
         } else if (snapshot.hasError) {
           return const Text("error");
         } else if (snapshot.hasData) {
+          context.read<AppState>().getName();
+          context.read<AppState>().getUserGroup();
           return const Home();
         }
         return Scaffold(
