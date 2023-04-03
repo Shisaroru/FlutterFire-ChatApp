@@ -1,4 +1,3 @@
-import 'package:myproject_app/shared/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 
 class Contact extends StatelessWidget {
@@ -10,7 +9,6 @@ class Contact extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Contact"),
       ),
-      bottomNavigationBar: const BottomNavBar(),
     );
   }
 }

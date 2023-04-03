@@ -42,7 +42,7 @@ class AppDrawer extends StatelessWidget {
               Icons.group,
             ),
             onTap: () {
-              Navigator.pushReplacementNamed(context, '/contact');
+              Navigator.pushNamed(context, '/contact');
             },
           ),
           ListTile(
