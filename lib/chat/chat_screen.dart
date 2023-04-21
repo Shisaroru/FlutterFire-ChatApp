@@ -107,6 +107,7 @@ class _ChatState extends State<Chat> {
                     builder: (context, snapshot) {
                       if (snapshot.hasData) {
                         return ListView.builder(
+                          reverse: true,
                           itemCount: snapshot.data!.docs.length,
                           itemBuilder: (context, index) {
                             return MessageTile(
